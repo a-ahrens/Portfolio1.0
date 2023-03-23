@@ -9,9 +9,19 @@
       >
         <div id="project-name-links">
           <h3>{{ project.projectName }}</h3>
-          <a v-for="link in project.links" v-bind:key="link.index" :href="link.url">
-            <img id="link-icon" :src="require(`@/assets/tech/${link.icon}`)" :alt="link.linkName">
-          </a>
+          <div>
+            <a
+              v-for="link in project.links"
+              v-bind:key="link.index"
+              :href="link.url"
+            >
+              <img
+                id="link-icon"
+                :src="require(`@/assets/tech/${link.icon}`)"
+                :alt="link.linkName"
+              />
+            </a>
+          </div>
         </div>
         <div id="project-detail">
           <p>{{ project.description }}</p>
@@ -60,6 +70,11 @@ export default {
           images: ["", "", ""],
           links: [
             {
+              linkName: "Paddler App Project Repo",
+              icon: "github.png",
+              url: "https://github.com/a-ahrens/Kudo_Kademy"
+            },
+            {
               linkName: "Youtube App Overview",
               icon: "youtube.png",
               url: "https://youtu.be/PkBsPErYmSc",
@@ -73,8 +88,14 @@ export default {
           skills: "",
           techStack:
             "Java, PostgreSQL, Spring-Boot, HTML, CSS, Javascript, Vuejs",
-          images: ["", "", ""],
-          links: [],
+          images: [],
+          links: [
+            {
+              linkName: "Kudo Kademy Project Repo",
+              icon: "github.png",
+              url: "https://github.com/a-ahrens/Kudo_Kademy"
+            }
+          ],
         },
         {
           projectName: "Tenmo Cash App",
@@ -82,8 +103,14 @@ export default {
             "Designed and built a backend application that simulates payment requests and transfers between users.",
           skills: "",
           techStack: "Java, PostgreSQL, Spring-Boot",
-          images: ["", "", ""],
-          links: [],
+          images: [],
+          links: [
+            {
+              linkName: "Tenmo Cash App Project Repo",
+              icon: "github.png",
+              url: "https://github.com/a-ahrens/Tenmo_Cash_App"
+            }
+          ],
         },
         {
           projectName: "Vending Machine App",
@@ -91,8 +118,14 @@ export default {
             "A CLI based application that simulates the functionality of a standard snack vending machine.",
           skills: "",
           techStack: "Java",
-          images: ["", "", ""],
-          links: [],
+          images: [],
+          links: [
+            {
+              linkName: "Vending Machine Project Repo",
+              icon: "github.png",
+              url: "https://github.com/a-ahrens/TEVendingMachine"
+            }
+          ],
         },
       ],
     };
@@ -101,9 +134,9 @@ export default {
 </script>
 
 <style scoped>
-#link-icon{
-  width:50px;
-  height:50px;
+#link-icon {
+  width: 50px;
+  height: 50px;
 }
 
 .project {
@@ -126,5 +159,9 @@ export default {
 #project-name-links {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  background-color: aliceblue;
+  padding: 0 10px 0 10px;
+  color: black;
 }
 </style>
